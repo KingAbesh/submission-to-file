@@ -1,0 +1,29 @@
+body {
+  background: #030303;
+  color: #fff;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+div, h2 {
+  text-align: center;
+}
+
+h1 {
+  text-align: center; 
+  font-size: 50px; 
+  color: rgb(17, 168, 206);
+}
+
+div .img {
+  display: flex; 
+  width: 100%; 
+  justify-content: center;
+}
+
+p #details {
+  margin-bottom: 20px;
+}
