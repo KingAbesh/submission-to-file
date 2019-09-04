@@ -1,6 +1,6 @@
 body {
-  background: #030303;
-  color: #fff;
+  background: #acdbd9;
+  color: #000;
   display: block;
 }
 
@@ -8,22 +8,145 @@ ul {
   list-style-type: none;
 }
 
-div, h2 {
+div,
+h2 {
   text-align: center;
 }
 
 h1 {
-  text-align: center; 
-  font-size: 50px; 
-  color: rgb(17, 168, 206);
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(11, 12, 12);
 }
 
 div .img {
-  display: flex; 
-  width: 100%; 
+  display: flex;
+  width: 100%;
   justify-content: center;
 }
 
 p #details {
   margin-bottom: 20px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.contact-button {
+  height: 2rem;
+  width: 4rem;
+  text-transform: uppercase;
+  background: #012b28;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 10%;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+  width: 4.5rem;
+  background: rgb(0, 0, 0, 0.7);
+}
+
+.form-background {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 120%;
+  margin-bottom: 3rem;
+  top: 0;
+  display: none;
+}
+
+.form-contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f8680;
+  width: 50%;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1rem;
+  top: 0;
+}
+
+.form-contact__form {
+  display: block;
+}
+
+.form-background__button_close {
+  display: block;
+  right: 0;
+  margin-right: 2rem;
+  position: absolute;
+  font-size: 1rem;
+  background: rgba(248, 4, 4, 0.7);
+  margin-top: 20px;
+  color: #fff;
+  border: 1px solid black;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.1s ease-in;
+}
+
+.form-background__button_close:active {
+  width: 6rem;
+  opacity: 0.5;
+}
+
+.form-contact__form input,
+.form-contact__form textarea {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 20rem;
+  padding: 0 0.5rem;
+  margin: 0.5rem 0 1.5rem 0;
+  outline: none;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-contact__form input {
+  height: 2rem;
+}
+
+*::placeholder {
+  font-weight: normal;
+}
+
+.form-contact__button {
+  background: #012b28;
+  color: #fff;
+  width: 10rem;
+  height: 2rem;
+  border: 1px solid #000;
+  border-radius: 2em;
+  /* outline: none; */
+  transition: all 0.1s ease-in;
+}
+
+.form-contact__button:active {
+  width: 11rem;
+  z-index: 3;
+  opacity: 0.5;
+}
+
+span {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  display: none;
+}
+.onsubmit {
+  text-align: center;
+  padding: 10px;
+}
+
+.onsubmit h1 {
+  color: #fff;
+  font-size: 3rem;
 }
