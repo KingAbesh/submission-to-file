@@ -158,6 +158,10 @@ span {
 
   .form-background {
     width: 100vw;
-    height: 100vh;
+    height: 50vw;
+  }
+
+  .form-background__button_close {
+    margin-right: 0;
   }
 }
