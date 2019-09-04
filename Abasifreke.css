@@ -53,11 +53,12 @@ img {
 .form-background {
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 120%;
+  width: 100vw;
+  height: 120vw;
   margin-bottom: 3rem;
   top: 0;
   display: none;
+  transition: 0.3s;
 }
 
 .form-contact {
@@ -66,7 +67,7 @@ img {
   justify-content: center;
   align-items: center;
   background: #0f8680;
-  width: 50%;
+  max-width: 500px;
   margin: auto;
   margin-top: 3rem;
   padding: 1rem;
@@ -126,7 +127,7 @@ img {
   height: 2rem;
   border: 1px solid #000;
   border-radius: 2em;
-  /* outline: none; */
+  outline: none;
   transition: all 0.1s ease-in;
 }
 
@@ -153,12 +154,18 @@ span {
 
 @media only screen and (max-width: 768px) {
   .form-contact {
+    width: auto;
+    height: auto;
+  }
+
+  .form-contact__form {
+    display: block;
     width: 100vw;
   }
 
   .form-background {
     width: 100vw;
-    height: 50vw;
+    height: 100vh;
   }
 
   .form-background__button_close {
