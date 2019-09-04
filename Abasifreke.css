@@ -150,3 +150,14 @@ span {
   color: #fff;
   font-size: 3rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .form-contact {
+    width: 100vw;
+  }
+
+  .form-background {
+    width: 100vw;
+    height: 100vh;
+  }
+}
