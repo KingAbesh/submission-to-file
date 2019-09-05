@@ -62,13 +62,19 @@ const handleNameInput = e => {
 
 const handleSubmit = e => {
   e.preventDefault();
-  if (name.value.length > 0 && name.value.length < 4) {
+
+
+  if(name.value === "" || email.value === "" || title.value === "" || message.value === ""){
+      return null;
+  }
+  else if (name.value.length > 0 && name.value.length < 4) {
     showErrorOnSubmit(
       "name",
       "block",
       "Your name should not be less than four letters"
     );
     setTimeout(() => showErrorOnSubmit("name", "none", null), 3000);
+    return null;
   } else if (message.value.length > 0 && message.value.length < 20) {
     showErrorOnSubmit(
       "message",
@@ -76,9 +82,11 @@ const handleSubmit = e => {
       "Your message should not be less than twenty letters"
     );
     setTimeout(() => showErrorOnSubmit("message", "none", null), 3000);
+    return null;
   } else if (!emailValidator.test(email.value)) {
     showErrorOnSubmit("email", "block", "Please enter a valid email address");
     setTimeout(() => showErrorOnSubmit("email", "none", null), 3000);
+    return null;
   } else {
     form.reset();
     form.innerHTML = `<div class="onsubmit"><h1>Thank you for contacting me. I will be getting back to you shortly</h1></div>`;
