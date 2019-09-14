@@ -27,26 +27,26 @@
         </p>
       </div>
     </div>
-    <div class="form-background">
+    <!-- <div class="form-background">
         <button class="form-background__button_close">Close</button>
     <div class="form-contact">
-      <form action="" class="form-contact__form">
+      <form action="index.php" method="post" class="form-contact__form">
         <label>Title</label><br/>
         <span class="show-title">Please enter your title.</span><br/>
-        <input type="text" class="title" placeholder="Enter your title"><br/>
+        <input type="text" class="title" name="title" placeholder="Enter your title"><br/>
         <label>Name</label><br/>
         <span class="show-name">Please enter your name.</span><br/>
-        <input type="text" class="name" placeholder="Enter your name"><br/>
+        <input type="text" class="name" name="name" placeholder="Enter your name"><br/>
         <label>Email</label><br/>
         <span class="show-email">Please enter your email.</span><br/>
-        <input type="text" class="email" placeholder="Enter your email"><br/>
+        <input type="text" class="email" name="email" placeholder="Enter your email"><br/>
         <label>Message</label><br/>
         <span class="show-message">Please enter your message.</span><br/>
-        <textarea name="" id="" cols="30" rows="10" class="message" placeholder="Enter your message"></textarea><br/>
-        <button class="form-contact__button">SUBMIT</button>
+        <textarea name="message" id="" cols="30" rows="10" class="message" placeholder="Enter your message"></textarea><br/>
+        <input type="submit" name="submit" class="form-contact__button">
       </form>
     </div>
-    </div>
+    </div> -->
 
     <hr />
     <br />
@@ -152,6 +152,46 @@
     <br />
     <br />
     <hr />
+    <div class="form-background">
+        <button class="form-background__button_close">Close</button>
+    <div class="form-contact">
+      <form action="index.php" method="post" class="form-contact__form" id="form-contact">
+        <label>Title</label><br/>
+        <span class="show-title">Please enter your title.</span><br/>
+        <input type="text" class="title" name="title" placeholder="Enter your title"><br/>
+        <label>Name</label><br/>
+        <span class="show-name">Please enter your name.</span><br/>
+        <input type="text" class="name" name="name" placeholder="Enter your name"><br/>
+        <label>Email</label><br/>
+        <span class="show-email">Please enter your email.</span><br/>
+        <input type="text" class="email" name="email" placeholder="Enter your email"><br/>
+        <label>Message</label><br/>
+        <span class="show-message">Please enter your message.</span><br/>
+        <textarea name="message" id="" cols="30" rows="10" class="message" placeholder="Enter your message"></textarea><br/>
+        <input type="submit" name="submitform" class="form-contact__button">
+      </form>
+    </div>
+    </div>
     <script src="./abasifreke.js"></script>
   </body>
 </html>
+
+
+<?php
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title    = $_POST['title'];
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
+    $message  = $_POST['message'];
+
+    $fp = fopen("data.txt", "a");
+    fwrite($fp, "Title: " . $title . "\n");
+    fwrite($fp, "Name: " . $name . "\n");
+    fwrite($fp, "Email: " . $email . "\n");
+    fwrite($fp, "Message:\n" . $message);
+    fwrite($fp, "\n");
+    fclose($fp);
+    echo "Data saved.";
+    exit;
+  }
+?>
