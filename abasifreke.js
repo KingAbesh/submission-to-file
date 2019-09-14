@@ -47,7 +47,7 @@ const showError = e => {
 const handleNameInput = e => {
   if (nameIsInvalid.test(e.key)) {
     e.preventDefault();
-    event.stopImmediatePropagation();
+    e.stopImmediatePropagation();
     showErrorOnSubmit(
       "name",
       "block",
@@ -63,11 +63,14 @@ const handleNameInput = e => {
 const handleSubmit = e => {
   e.preventDefault();
 
-
-  if(name.value === "" || email.value === "" || title.value === "" || message.value === ""){
-      return null;
-  }
-  else if (name.value.length > 0 && name.value.length < 4) {
+  if (
+    name.value === "" ||
+    email.value === "" ||
+    title.value === "" ||
+    message.value === ""
+  ) {
+    return null;
+  } else if (name.value.length > 0 && name.value.length < 4) {
     showErrorOnSubmit(
       "name",
       "block",
@@ -88,6 +91,7 @@ const handleSubmit = e => {
     setTimeout(() => showErrorOnSubmit("email", "none", null), 3000);
     return null;
   } else {
+    form.submit();
     form.reset();
     form.innerHTML = `<div class="onsubmit"><h1>Thank you for contacting me. I will be getting back to you shortly</h1></div>`;
   }
